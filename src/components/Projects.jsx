@@ -20,7 +20,7 @@ export default function Projects() {
     },
     {
       title: "Kullanıcı Dostu React ToDo App",
-      desc: "Görev ekleme, tamamlama ve silme içeren React tabanlı ToDo uygulaması. Light/Dark tema destekli modern proje.",
+      desc: "Görev ekleme, tamamlama ve silme içeren React tabanlı ToDo uygulaması. Light/Dark tema destekli kullanıcı dostu modern Projem.",
       tech: "React",
       github: "https://github.com/mehmet2725/todo_react",
       site: "https://todo-react-phi-steel.vercel.app/",
@@ -71,9 +71,18 @@ export default function Projects() {
                 )}
               </div>
             </div>
+
           ))}
+
         </div>
       </div>
+      <br />
+      <p>Daha Fazla Proje İçin <a
+        href="https://github.com/mehmet2725"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link github"
+      > Github </a></p>
     </section>
   );
 }
