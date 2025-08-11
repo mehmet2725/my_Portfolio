@@ -1,6 +1,7 @@
-// Navbar.jsx - Düzeltilmiş navbar
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaMoon, FaSun } from "react-icons/fa";
+import logoLight from "/logo6.png";
+import logoDark from "/logo5.png";
 
 export default function Navbar({ darkMode, setDarkMode }) {
   const [active, setActive] = useState("anasayfa");
@@ -26,8 +27,12 @@ export default function Navbar({ darkMode, setDarkMode }) {
     <nav className="navbar">
       <div className="container">
         <div className="navbar-content">
-          <a href="#anasayfa" className="navbar-brand text-gradient">
-               <img src="/logo3.PNG" alt="Mehmet Sönmez Logo" style={{ height: "45px" }} />
+          <a href="#anasayfa" className="navbar-brand">
+            <img 
+              src={darkMode ? logoDark : logoLight} 
+              alt="Mehmet Sönmez Logo" 
+              style={{ height: "40px" }} 
+            />
           </a>
           
           <ul className="navbar-menu">
