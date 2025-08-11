@@ -27,7 +27,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
       <div className="container">
         <div className="navbar-content">
           <a href="#anasayfa" className="navbar-brand text-gradient">
-               <img src="/logo.JPG" alt="Mehmet Sönmez Logo" style={{ height: "45px" }} />
+               <img src="/logo3.PNG" alt="Mehmet Sönmez Logo" style={{ height: "45px" }} />
           </a>
           
           <ul className="navbar-menu">
