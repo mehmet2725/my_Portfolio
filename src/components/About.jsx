@@ -14,6 +14,7 @@ export default function About() {
   const para1Ref = useRef(null);
   const para2Ref = useRef(null);
   const iconsRef = useRef([]);
+  const cvButtonRef = useRef(null);
 
   const tech = [
     { icon: <FaHtml5 />, label: "HTML5", color: "text-orange-500" },
@@ -22,7 +23,7 @@ export default function About() {
     { icon: <FaJs />, label: "JavaScript", color: "text-yellow-400" },
     { icon: <FaReact />, label: "React", color: "text-cyan-400" },
     { icon: <FaGitAlt />, label: "Git & GitHub", color: "text-red-500" },
-    { icon: "C#", label: "C#", color: "text-blue-700" }, // C# icon yok, yazı olarak bıraktık
+    { icon: "C#", label: "C#", color: "text-blue-700" },
     { icon: <SiMysql />, label: "MySQL", color: "text-teal-500" },
   ];
 
@@ -41,7 +42,7 @@ export default function About() {
         opacity: 1,
         stagger: 0.01,
         delay: delay,
-        duration: 0.1,
+        duration: 0.6,
         ease: "power1.inOut",
       });
     };
@@ -62,11 +63,24 @@ export default function About() {
             opacity: 1,
             y: 0,
             stagger: 0.1,
-            duration: 0.1,
+            duration: 0.6,
             ease: "back.out(1.7)",
           }
         ),
         "+=0.1"
+      )
+      .add(
+        gsap.fromTo(
+          cvButtonRef.current,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          }
+        ),
+        "+=0.3"
       );
   }, []);
 
@@ -94,12 +108,21 @@ export default function About() {
               className="tech-item group transition-transform duration-300 hover:scale-110"
               ref={(el) => (iconsRef.current[i] = el)}
             >
-              <div className={`icon text-4xl ${t.color} transition duration-300 group-hover:scale-110`}>
+              <div
+                className={`icon text-4xl ${t.color} transition duration-300 group-hover:scale-110`}
+              >
                 {typeof t.icon === "string" ? <span>{t.icon}</span> : t.icon}
               </div>
               <span className="label mt-2 block text-sm">{t.label}</span>
             </div>
           ))}
+        </div>
+          <br />
+        {/* CV İndirme Butonu */}
+        <div className="mt-8 text-center" ref={cvButtonRef}>
+          <a href="/cv.pdf" download className="cta-button">
+            📄 CV’mi İndir
+          </a>
         </div>
       </div>
     </section>
